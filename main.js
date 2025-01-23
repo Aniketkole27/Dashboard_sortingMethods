@@ -9,8 +9,10 @@ let max = 100;
 let size = 20;
 let arr = [];
 
+// make the random array 
 for (let i = 0; i < size; i++) arr[i] = Math.floor(Math.random() * max) + 1;
 
+// create a candle/bars 
 for (let i = 0; i < arr.length; i++) {
     let candle = document.createElement('div');
     candle.innerText = arr[i];
@@ -19,6 +21,7 @@ for (let i = 0; i < arr.length; i++) {
     mainDiv.appendChild(candle);
 }
 
+// choise the Sorting algorithm
 let run = false;
 btn.addEventListener("click", () => {
     const algorithm = select.value;
@@ -34,16 +37,18 @@ btn.addEventListener("click", () => {
     }
 });
 
+// range varior
 let speed = 50;
 speedInput.addEventListener("input", () => {
     speed = 501 - speedInput.value; // Invert value so higher = faster
 });
 
+// sleep function
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Function to perform Bubble Sort with animation
+// Bubble Sort algorithm
 const bars = document.querySelectorAll('.newlist');
 async function bubbleSort(arr) {
     run = true;
@@ -89,7 +94,7 @@ async function bubbleSort(arr) {
 }
 
 
-
+// selection sort algorithm
 async function selectionSort(arr) {
     run = true;
     let n = arr.length;
@@ -138,6 +143,7 @@ async function selectionSort(arr) {
     run = false;
 }
 
+// Shuffle Function 
 const shuffle = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
