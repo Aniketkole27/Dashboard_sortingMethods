@@ -143,6 +143,9 @@ async function selectionSort(arr) {
     run = false;
 }
 
+
+// insertion sort
+
 // Shuffle Function 
 const shuffle = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
